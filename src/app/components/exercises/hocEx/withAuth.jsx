@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const withAuth = (Component) => (props) => {
-    const isAuth = localStorage.getItem("user") !== null;
+    const [isAuth, setIsAuth] = useState(localStorage.getItem("user"));
+    useEffect(() => {
+        setIsAuth(localStorage.getItem("user") !== null);
+    }, [isAuth]);
     return <Component {...props} isAuth={isAuth} />;
 };
 

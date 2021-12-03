@@ -12,7 +12,6 @@ import withFunc from "./hocEx/withFunc";
 const HocExercise = () => {
     const ComponentWithPropsCardWrapper = withPropsCardWrapper(SimpleComponent);
     const ComponentWithAuth = withAuth(SimpleComponent);
-    const ComponentWithFunc = withFunc(SimpleComponent);
     const ComponentWithAuthAndFunc = withFunc(ComponentWithAuth);
 
     return (
@@ -66,16 +65,6 @@ const HocExercise = () => {
                 <SmallTitle> Обертка</SmallTitle>
                 <Divider />
                 <ComponentWithPropsCardWrapper />
-            </CardWrapper>
-            <CardWrapper>
-                <SmallTitle> Auth</SmallTitle>
-                <Divider />
-                <ComponentWithAuth />
-            </CardWrapper>
-            <CardWrapper>
-                <SmallTitle> Func</SmallTitle>
-                <Divider />
-                <ComponentWithFunc />
             </CardWrapper>
             <CardWrapper>
                 <SmallTitle> Auth + Func</SmallTitle>
